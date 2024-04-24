@@ -1,0 +1,428 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    scroll-behavior: smooth;
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+:root{
+    --bg-color:#171427;
+    --bird-color:white;
+    --obstacle-color:rgb(0, 255, 0);
+}
+body{
+    width: 100%;
+    min-width: 100vw;
+    min-height: 100vh;
+    position: relative;
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    /* position: relative; */
+}
+#game{
+    background-color: var(--bg-color);
+    width:  400px;
+    height: 500px;
+    border: 2px solid var(--bird-color);
+    /* margin-top:50% ;
+    margin-left: 50%; */
+    transform: translate(-65%,-50%);
+    top:65%;
+    left: 54%;
+    position:absolute;
+    overflow: hidden;
+  
+}
+#obstacle{
+    width: 50px;
+    height: 500px;
+    background-color:var(--obstacle-color);
+    position: absolute;
+    top: 0%;
+    left: 100%;
+    z-index:1;
+    animation:obstacle-anim  2s infinite linear;
+}
+#hole{
+    width: 50px;
+    height:150px;
+    background-color:var(--bg-color);
+    position: absolute;
+    top:150px ;
+    left: 100%;
+    z-index: 2;
+    animation:obstacle-anim  2s infinite linear;
+}
+@keyframes obstacle-anim {
+    0%{
+        left: 100%;
+    }
+    100%{
+        left:-60px;
+    }
+}
+
+.zero{
+
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 2;
+    align-items: center;
+    display: flex;
+    justify-content:space-around;
+    padding: 0%;
+    margin: 0%;
+    overflow: hidden;    
+    border-radius: 50%;
+    border: 1px solid transparent;
+}
+#zero-animi1{
+    animation:zero-anim1 6s infinite ease-in-out;
+    width: 100%;
+    height: 100%;
+    font-size: 29px;
+}
+#zero-animi2{
+    width: 100%;
+    height: 100%;
+    animation:zero-anim2 10s infinite ease-in-out;
+    transform: translate(-50%,-50%);
+    z-index: 55;
+    font-size: 20px;
+}
+#zero-animi3{
+    width: 100%;
+    height: 100%;
+    animation:zero-anim3 8s infinite ease-in-out;
+    transform: translate(-50%,-50%);
+    z-index: 55;
+    font-size: 20px;
+}
+#zero-animi4{
+    width: 100%;
+    height: 100%;
+    animation:obstacle-anim 4s infinite ease-in-out;
+    transform: translate(-50%,-50%);
+    z-index: 55;
+    font-size: 20px;
+}
+#zero-animi5{
+    width: 100%;
+    height: 100%;
+    animation:obstacle-anim2 4s infinite ease-in-out;
+    transform: translate(-50%,-50%);
+    z-index: 55;
+    font-size: 22px;
+}
+#zero-animi1,#zero-animi2,#zero-animi3,#zero-animi4,#zero-animi5{
+    position: absolute;
+    letter-spacing: 49px;
+    word-wrap:break-word;
+    text-align: center;
+    display: block;
+    color: rgb(0, 255, 0);
+
+}
+@keyframes zero-anim1 {
+    0%{
+        top:-100%;
+        transform: translateY(180deg);
+       
+    }
+    20%{
+        top:-80%;
+        /* transform: rotate(-10deg,10deg);
+        transform: translateY(80deg); */
+    }
+    40%{
+        /* transform: rotate(-40deg,40deg); */
+        top:-60%;
+        z-index: 9;
+        /* transform: rotateY(-180deg); */
+    }
+    70%{
+        top:-30%;
+        z-index: -9;
+        /* transform: rotateY(180deg); */
+    }
+    100%{
+        top:-100%;
+        opacity: .9;
+        border-radius: 50%;
+        /* transform: rotateY(100deg); */
+    }
+
+}
+@keyframes zero-anim3 {
+    0%{
+        transform: rotate(360deg);
+        border-radius: 50%;
+       
+    }
+    20%{
+        transform: rotate(270deg);
+        border-radius: 50%;
+        /* transform: rotate(-10deg,10deg);
+        transform: translateY(80deg); */
+    }
+    40%{
+        /* transform: rotate(-40deg,40deg); */
+        transform: rotate(180deg);
+        border-radius: 50%;
+        z-index: 9;
+        /* transform: rotateY(-180deg); */
+    }
+    70%{
+        transform: rotate(100deg);
+        border-radius: 50%;
+        z-index: -9;
+        /* transform: rotateY(180deg); */
+    }
+    100%{
+        transform: rotate(00deg);
+        opacity: .9;
+        border-radius: 50%;
+        /* transform: rotateY(100deg); */
+    }
+
+}
+@keyframes zero-anim2 {
+    0%{
+        transform: rotate(0deg);
+        border-radius: 50%;
+       
+    }
+    20%{
+        transform: rotate(100deg);
+        border-radius: 50%;
+        /* transform: rotate(-10deg,10deg);
+        transform: translateY(80deg); */
+    }
+    40%{
+        /* transform: rotate(-40deg,40deg); */
+        transform: rotate(180deg);
+        border-radius: 50%;
+        z-index: 9;
+        /* transform: rotateY(-180deg); */
+    }
+    70%{
+        transform: rotate(270deg);
+        border-radius: 50%;
+        z-index: -9;
+        /* transform: rotateY(180deg); */
+    }
+    100%{
+        transform: rotate(360deg);
+        opacity: .9;
+        border-radius: 50%;
+        /* transform: rotateY(100deg); */
+    }
+
+}
+#bird{
+    width:20px;
+    height:20px;
+    background-color:black;
+    position: absolute;
+    border-radius: 50%;
+    z-index: 3;
+    color: rgb(0, 255, 0);
+    top: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+}
+#score{
+    position: absolute;
+    top: 0;
+    left:30% ;
+    text-align: center;
+    font-weight: bold;
+    color: rgb(0, 255, 0);
+    z-index: 3;
+    padding: 20px;
+    margin: 5px;
+}
+#hole.speed,#obstacle.speed{
+    animation:obstacle-anim 1s infinite linear;
+}
+#hole.speed1,#obstacle.speed1{
+    animation:obstacle-anim .5s infinite linear;
+}
+#stop{
+    position:absolute;
+    top:50% ;
+    left: 70%;
+    background-color: rgb(0, 0, 0);
+    margin-top: 10px;
+    color: rgb(0, 255, 0);
+    outline: none;
+    border-radius:5px;
+    width:200px;
+    font-size: 30px;
+    font-style: italic;
+}
+/* #pause{
+    font-size:30px;
+    color: rgb(0, 0, 0);
+    font-weight: 800;
+    margin-left: 3px;
+} */
+/* 
+
+start Section 
+
+*/
+.overlay{
+    position:absolute;
+    left: 50%;
+    transform: translate(-50%,-0%);
+    background: rgb(15, 26, 46);
+    width: 100vw;
+    z-index: -1;
+    height: 100vh;
+}
+.wrapper{
+    position:absolute;
+    gap: 10px;
+    top:1% ;
+    left: 50%;
+    transform: translate(-50%,-0%);
+    background: rgb(0, 0, 0);
+    display: flex;
+    width: 80vw;
+    justify-content: space-around;
+    align-items: start;
+    margin-top: 40px;
+}
+.container{
+    width: 28vmin;
+    height: 28vmin;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 1em 0;
+    border-radius: 10px;
+    font-size: 16px;
+    position: relative;
+    background-color: #21252b;
+    border-bottom: 10px solid #18f98f ;
+}
+i{
+    color: #ffae00;
+    text-align: center;
+}
+.container .num{
+    color:rgb(0, 255, 0) ;
+    place-items: center;
+    display:grid;
+    font-size: 3em;
+    font-weight: 600;
+}
+.container .text{
+    color:rgb(0, 255, 0) ;
+    place-items: center;
+    display:grid;
+    font-size: 1em;
+    font-weight: 600;
+    pad: 0.7em; ;
+    line-height: 0;
+}
+
+
+/* 
+ ---- Media Quer
+
+*/
+@media screen and (max-width:1024px){
+    .wrapper{
+        width:90vw;
+    }
+    .container{
+        width: 26vmin;
+        height: 26vmin;
+        font-size: 14px;
+    }
+
+}
+@media screen and (max-width:768px){
+    .wrapper{
+        width:90vw;
+        flex-wrap: wrap;
+        gap:30px;
+    }
+    .container{
+        width:300px;
+        height:30vmin;
+        font-size: 14px;
+
+    }
+    #game{
+        width:  600px;
+        height: 400px;
+        /* margin-top:50% ;
+        margin-left: 50%; */
+        transform: translate(-55%,-52%);
+        top:55%;
+        left: 52%;
+        margin-top: 410px;
+    }
+    #obstacle{
+        height: 400px;
+        top: 0%;
+        left: 100%;
+    }
+    #hole{
+        height:140px;
+        top:100px ;
+        left: 100%;
+    }
+}
+@media screen and (max-width:600px){
+    #game{
+        width:  500px;
+        height: 400px;
+        /* margin-top:50% ;
+        margin-left: 50%; */
+        transform: translate(-85%,-78%);
+        top:85%;
+        left: 78%;
+        margin-top: 510px;
+    }
+@media screen and (max-width:480px){
+    .wrapper{
+        width:100vw;
+        flex-wrap: wrap;
+        gap:20px;
+    }
+    .container{
+        width: calc(100%);
+        height:30vmin;
+        font-size:8px;
+
+    }
+    #game{
+        width:350px;
+        height: 500px;
+        /* margin-top:50% ;
+        margin-left: 50%; */
+        transform: translate(-85%,-76%);
+        top:85%;
+        left:76%;
+        margin-top:400px;
+        margin-right:50px ;
+        box-sizing: content-box;
+    }
+    #obstacle{
+        height:500px;
+        left: 100%;
+    }
+    #hole{
+        height:150px;
+        top:90px ;
+        left: 100%;
+    }
+}}
