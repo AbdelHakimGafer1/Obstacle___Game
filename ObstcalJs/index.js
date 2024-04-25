@@ -33,7 +33,7 @@ rr();
 let rand = Math.random()*(500-150);
 hole.style.top=rand+'px';
 scoree.innerHTML=`Your Score Is : ${++score}`
-stop.innerHTML=` Yor score is : ${score}`;
+// stop.innerHTML=` Yor score is : ${score}`;
 stop.style.display='block';})
 
 let stop1=document.addEventListener('keydown',()=>{
@@ -73,7 +73,7 @@ const  haim = setInterval(() => {
         let stop =document.getElementById('stop')
         hole.classList.remove('speed');
         obstacle.classList.remove('speed');
-        stop.style.display='none';
+        // stop.style.display='none';
         bird.innerText="0";
         bird.style.top=10+'px';
         obstacle.style.left='100%';
